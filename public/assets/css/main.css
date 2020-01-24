@@ -61,3 +61,7 @@ body { padding-top: 56px; }
 
     /* убираем margin для красоты */
     .form-signin .input-group-password { margin-top: -1px; }
+
+@media only screen and (max-width: 600px) {
+    body { padding-top: 70px; }
+}
