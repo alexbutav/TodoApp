@@ -1,29 +1,32 @@
 <?php
-    require "../vendor/autoload.php";
 
-    require "../app/core/Database.php";
+require "../vendor/autoload.php";
 
-    // Инициализация сессии
-    if (session_status() == PHP_SESSION_NONE) session_start();
+require "../app/core/Database.php";
 
-    // Настраиваем маршрутизатор
-    $router = new App\Core\Router();
+// Инициализация сессии
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-    // main
-    $router->add('/', 'HomeController@index');
-    $router->add('/page/{id:\d*}', 'HomeController@index');
-    
-    $router->add('/sort/change/field/{field}', 'HomeController@changeSortField');
-    $router->add('/sort/change/direction/{direction}', 'HomeController@changeSortDirection');
+// Настраиваем маршрутизатор
+$router = new App\Core\Router();
 
-    // auth
-    $router->add('/login', 'LoginController@index');
-    $router->add('/logout', 'LoginController@logout');
-    $router->add('/auth', 'LoginController@auth');
+// main
+$router->add('/', 'HomeController@index');
+$router->add('/page/{id:\d*}', 'HomeController@index');
 
-    // task
-    $router->add('/task/add', 'TaskController@add');
-    $router->add('/task/edit', 'TaskController@edit');
+$router->add('/sort/change/field/{field}', 'HomeController@changeSortField');
+$router->add('/sort/change/direction/{direction}', 'HomeController@changeSortDirection');
 
-    // запускаем
-    $router->dispatch();
+// auth
+$router->add('/login', 'LoginController@index');
+$router->add('/logout', 'LoginController@logout');
+$router->add('/auth', 'LoginController@auth');
+
+// task
+$router->add('/task/add', 'TaskController@add');
+$router->add('/task/edit', 'TaskController@edit');
+
+// запускаем
+$router->dispatch();
