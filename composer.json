@@ -8,9 +8,10 @@
 		}
 	},
 	"require": {
-		"twig/twig": "3.0",
-		"illuminate/database": "^6.11",
-		"twbs/bootstrap": "4.1.3",
-		"illuminate/pagination": "^6.12"
+		"php": "^8.0.0",
+		"twig/twig": "^3.6",
+		"illuminate/database": "^10.13",
+		"twbs/bootstrap": "^5.3",
+		"illuminate/pagination": "^10.13"
 	}
 }
