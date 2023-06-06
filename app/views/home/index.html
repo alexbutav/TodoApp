@@ -34,7 +34,7 @@
             </div>
         {% endif %}
     </div>
-    
+
     <!-- сообщения об ошибках и прочих  -->
     {% for error in errors %}
         <div class="alert alert-dark mb-1" role="alert"><i style='color: red;' class="fas fa-exclamation-triangle"></i> {{ error }}</div>
@@ -107,7 +107,7 @@
                     {% if tasks.currentPage() > 4 %}
                         <li class="page-item disabled"><a class="page-link" tabindex="-1" href="#">...</a></li>
                     {% endif %}
-                    
+
                     <!-- 2 - текущая + 2 -->
                     {% for n in (tasks.currentPage() - 2)..(tasks.currentPage() + 2) %}
                         {% if n > 0 and n <= tasks.lastPage() %}
@@ -130,12 +130,12 @@
                         <li class="page-item disabled active"><a class="page-link" tabindex="-1" href="#">&raquo;</a></li>
                     {% else %}
                         <li class="page-item"><a class="page-link" href="/page/{{ tasks.currentPage() + 1 }}">&raquo;</a></li>
-                    {% endif %}          
+                    {% endif %}
                 </ul>
             </nav>
         {% endif %}
     {% endif %}
-    
+
     <!-- Модалка добавления задачи -->
     <div class="modal fade" id="add-task-moadl" tabindex="-1" role="dialog" aria-labelledby="add-task-moadl" aria-hidden="true">
         <div class="modal-dialog" role="document">

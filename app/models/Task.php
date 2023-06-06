@@ -1,8 +1,10 @@
 <?php
-    namespace App\Models;
 
-    use Illuminate\Database\Eloquent\Model as Eloquent;
+namespace App\Models;
 
-    class Task extends Eloquent {
-        protected $fillable = ['email', 'name', 'body'];
-    }
+use Illuminate\Database\Eloquent\Model as Eloquent;
+
+class Task extends Eloquent
+{
+    protected $fillable = ['email', 'name', 'body', 'edited'];
+}

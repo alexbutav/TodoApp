@@ -1,12 +1,12 @@
 <?php
-    namespace App\Models;
 
-    use Illuminate\Database\Eloquent\Model as Eloquent;
+namespace App\Models;
 
-    class User extends Eloquent {
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
-        public $timestamps = [];
+class User extends Eloquent
+{
+    public $timestamps = [];
 
-        protected $fillable = ['name', 'email', 'password'];
-        
-    }
+    protected $fillable = ['name', 'email', 'password'];
+}

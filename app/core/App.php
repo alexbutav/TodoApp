@@ -1,8 +1,10 @@
 <?php
-    namespace App\Core;
 
-    class App {
-        public function __construct() {
-            
-        }
+namespace App\Core;
+
+class App
+{
+    public function __construct()
+    {
     }
+}

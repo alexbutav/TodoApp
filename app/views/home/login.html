@@ -3,7 +3,7 @@
 {% block body %}
 
     <div class='h-100 w-100 d-flex flex-column justify-content-center align-items-center'>
-    
+
         {% for error in errors %}
             <div class="alert alert-dark mb-1" role="alert"><i style='color: red;' class="fas fa-exclamation-triangle"></i> {{ error }}</div>
         {% endfor %}
@@ -21,25 +21,25 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text rounded-0 rounded-top-left" id="basic-addon1"><i class="fas fa-at"></i></span>
                     </div>
-                    <input 
-                        type="text" 
-                        autofocus 
-                        class="form-control rounded-0 rounded-top-right" 
-                        name="email"
-                        placeholder="email" 
-                        aria-label="email" 
+                    <input
+                        type="text"
+                        autofocus
+                        class="form-control rounded-0 rounded-top-right"
+                        name="email
+                        placeholder="email"
+                        aria-label="email"
                         aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group input-group-password mb-1">
                     <div class="input-group-prepend">
                         <span class="input-group-text rounded-0 rounded-bottom-left" id="basic-addon1"><i class="fas fa-lock"></i></span>
                     </div>
-                    <input 
-                        type="password" 
+                    <input
+                        type="password"
                         name="password"
-                        class="form-control rounded-0 rounded-bottom-right" 
-                        placeholder="*****" 
-                        aria-label="*****" 
+                        class="form-control rounded-0 rounded-bottom-right"
+                        placeholder="*****"
+                        aria-label="*****"
                         aria-describedby="basic-addon1">
                 </div>
                 <button class="btn btn-primary" type="submit">Войти</button>
