@@ -138,7 +138,7 @@ class Router
                 $controller_instance = new $controller();
 
                 if (method_exists($controller_instance, $this->controller_action)) {
-                    call_user_func_array([$controller_instance, $this->controller_action], $this->params);
+                    call_user_func_array([$controller_instance, $this->controller_action], array_values($this->params));
                 }
             }
         } else {
