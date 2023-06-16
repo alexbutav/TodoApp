@@ -5,7 +5,6 @@ namespace App\Core;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule();
-
 if ($url = getenv("CLEARDB_DATABASE_URL")) {
     $url = parse_url($url);
     $host = $url["host"];
@@ -13,7 +12,7 @@ if ($url = getenv("CLEARDB_DATABASE_URL")) {
     $password = $url["pass"];
     $database = substr($url["path"], 1);
 } else {
-    $host = "mysql";
+    $host = "todo-db";
     $username = "root";
     $password = "root";
     $database = "website";
