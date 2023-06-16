@@ -13,5 +13,8 @@
 		"illuminate/database": "^10.13",
 		"twbs/bootstrap": "^5.3",
 		"illuminate/pagination": "^10.13"
+	},
+	"require-dev": {
+		"symfony/var-dumper": "^6.3"
 	}
 }
