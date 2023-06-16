@@ -5,5 +5,5 @@ window.addEventListener('DOMContentLoaded', function() {
     // фикс для страниц /page/...
         pathname = pathname == 'page' ? '' : pathname;
     $('nav.navbar li.active').removeClass('active');
-    $(`nav.navbar a[href="/${pathname}"]`).closest('li').addClass('active'); 
+    $(`nav.navbar a[href="/${pathname}"]`).closest('li').addClass('active');
 });
