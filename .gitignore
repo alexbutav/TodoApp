@@ -1,1 +1,2 @@
 vendor/
+migrations/insert_test_admin_user.sql
