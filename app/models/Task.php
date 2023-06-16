@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
  */
 class Task extends Eloquent
 {
-    protected $fillable = ['email', 'name', 'body', 'edited'];
+    protected $fillable = ['email', 'name', 'body', 'edited', 'done'];
 
     protected $casts = [
         'id' => 'integer',
