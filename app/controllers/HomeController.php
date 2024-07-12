@@ -21,9 +21,10 @@ class HomeController extends Core\Controller
 
     protected function initSortingParams()
     {
-        $_SESSION['sort'] = $_SESSION['sort'] ?: [];
-        $_SESSION['sort']['field'] = $_SESSION['sort']['field'] ?: 'id';
-        $_SESSION['sort']['direction'] = $_SESSION['sort']['direction'] ?: 'asc';
+        $_SESSION['sort'] = $_SESSION['sort'] ?? [];
+        $_SESSION['sort']['field'] = $_SESSION['sort']['field'] ?? 'id';
+        $_SESSION['sort']['direction'] = $_SESSION['sort']['direction'] ?? 'asc';
+
         [$this->sort_field, $this->sort_direction] = [$_SESSION['sort']['field'], $_SESSION['sort']['direction']];
     }
 
