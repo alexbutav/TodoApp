@@ -15,7 +15,7 @@ if ($url = getenv("CLEARDB_DATABASE_URL")) {
     $host = "todo-db";
     $username = "root";
     $password = "root";
-    $database = "website";
+    $database = "todo";
 }
 
 $capsule->addConnection([
