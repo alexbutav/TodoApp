@@ -1,0 +1,57 @@
+services:
+  nginx:
+    image: nginx:1.23.0-alpine
+    container_name: todo-nginx
+    depends_on:
+      - php
+    ports:
+      - "80:80"
+    restart: always
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./logs/nginx:/var/log/nginx
+      - ../:/var/www/todo.me
+    networks:
+      todo-net:
+        ipv4_address: 192.168.100.2
+
+  db:
+    image: mysql/mysql-server:8.0.31
+    command: "mysqld --default-authentication-plugin=mysql_native_password"
+    container_name: todo-db
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3377:3306"
+    restart: always
+    volumes:
+      - volume-db:/var/lib/mysql
+      - ./init-db:/docker-entrypoint-initdb.d:ro
+    working_dir: /var/www/todo.me/
+    networks:
+      todo-net:
+        ipv4_address: 192.168.100.3
+
+  php:
+    build: ./php
+    container_name: todo-php
+    restart: always
+    volumes:
+      - ../:/var/www/todo.me
+    working_dir: /var/www/todo.me/
+    networks:
+      todo-net:
+        ipv4_address: 192.168.100.4
+
+volumes:
+  volume-db:
+    name: todo-volume-db
+    driver: local
+
+networks:
+  todo-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.100.0/24
